@@ -1,9 +1,10 @@
 package cluster
 
 import (
-	"gonum.org/v1/gonum/mat"
 	"math"
 	"testing"
+
+	"gonum.org/v1/gonum/mat"
 )
 
 func TestMinkowskiDistanceP(t *testing.T) {

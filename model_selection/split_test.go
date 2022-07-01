@@ -3,11 +3,11 @@ package modelselection
 import (
 	"fmt"
 
-	"github.com/pa-m/sklearn/datasets"
-
-	"github.com/pa-m/sklearn/base"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/datasets"
 )
 
 func ExampleKFold() {

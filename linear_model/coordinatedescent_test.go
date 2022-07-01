@@ -2,13 +2,13 @@ package linearmodel
 
 import (
 	"fmt"
-	"golang.org/x/exp/rand"
 	"image/color"
 	"math"
 	"os"
 	"os/exec"
 	"time"
 
+	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
@@ -124,7 +124,7 @@ func ExampleElasticNet() {
 	if *visualDebug {
 
 		// plot result
-		p, _ := plot.New()
+		p := plot.New()
 
 		xys := func(X, Y []float64) plotter.XYs {
 			var data plotter.XYs

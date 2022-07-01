@@ -2,13 +2,14 @@ package linearmodel
 
 import (
 	"fmt"
-	"golang.org/x/exp/rand"
 	"math"
 	"testing"
 	"time"
 
-	"github.com/pa-m/sklearn/metrics"
+	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/metrics"
 )
 
 func TestRidge(t *testing.T) {

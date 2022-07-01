@@ -2,14 +2,13 @@ package kernels
 
 import (
 	"fmt"
-	"github.com/pa-m/sklearn/base"
 	"math"
 
 	"gonum.org/v1/gonum/floats"
-
 	"gonum.org/v1/gonum/mat"
-	//t "gorgonia.org/tensor"
-	t "github.com/pa-m/sklearn/gaussian_process/tensor"
+
+	"github.com/etrace-io/sklearn/base"
+	t "github.com/etrace-io/sklearn/gaussian_process/tensor"
 )
 
 // hyperparameter specification
@@ -39,6 +38,7 @@ func (params hyperparameters) notFixed() hyperparameters {
 	}
 	return notFixed
 }
+
 func (params hyperparameters) Theta() mat.Matrix {
 	notFixed := params.notFixed()
 	return matFromFunc{
@@ -53,6 +53,7 @@ func (params hyperparameters) Theta() mat.Matrix {
 		},
 	}
 }
+
 func (params hyperparameters) Bounds() (t mat.Matrix) {
 	notFixed := params.notFixed()
 	return matFromFunc{

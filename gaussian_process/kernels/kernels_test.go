@@ -2,17 +2,16 @@ package kernels
 
 import (
 	"fmt"
-	"github.com/pkg/errors"
-	"gonum.org/v1/gonum/floats"
 	"math"
 	"reflect"
 	"testing"
 
+	"github.com/pkg/errors"
+	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 
-	"github.com/pa-m/randomkit"
-	//"gorgonia.org/tensor"
-	"github.com/pa-m/sklearn/gaussian_process/tensor"
+	"github.com/etrace-io/sklearn/gaussian_process/tensor"
+	"github.com/etrace-io/sklearn/randomkit"
 )
 
 var _ = []Kernel{&ConstantKernel{}, &WhiteKernel{}, &RBF{}, &DotProduct{}, &Sum{}, &Product{}, &Exponentiation{}}
@@ -58,6 +57,7 @@ func ExampleConstantKernel() {
 	// ⎣0.00000000  0.00000000  1.23000000⎦
 
 }
+
 func ExampleWhiteKernel() {
 	// np.random.seed(1)
 	state := randomkit.NewRandomkitSource(1)
@@ -234,6 +234,7 @@ func ExampleKernel_Theta() {
 	// ⎡0.00000000⎤
 	// ⎣2.30258509⎦
 }
+
 func ExampleKernel_Bounds() {
 	kernel := &Product{KernelOperator{
 		K1: &ConstantKernel{ConstantValue: 1., ConstantValueBounds: [2]float64{1e-3, 1e3}},
@@ -341,6 +342,7 @@ func TestConstantKernel_Eval(t *testing.T) {
 		t.Errorf("wrong kg data, got %v", kg.Data().([]float64))
 	}
 }
+
 func TestWhiteKernel_Eval(t *testing.T) {
 	kernel := &WhiteKernel{NoiseLevel: 1.0, NoiseLevelBounds: [2]float64{1e-5, 1e5}}
 	state := randomkit.NewRandomkitSource(1)
@@ -357,6 +359,7 @@ func TestWhiteKernel_Eval(t *testing.T) {
 		t.Errorf("wrong kg data, got %v", kg.Data().([]float64))
 	}
 }
+
 func TestRBF_Eval(t *testing.T) {
 	kernel := &RBF{
 		LengthScale:       []float64{10},

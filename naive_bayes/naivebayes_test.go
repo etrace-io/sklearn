@@ -2,10 +2,11 @@ package naivebayes
 
 import (
 	"fmt"
-	"github.com/pa-m/sklearn/datasets"
-	modelselection "github.com/pa-m/sklearn/model_selection"
-	"github.com/pa-m/sklearn/pipeline"
-	"github.com/pa-m/sklearn/preprocessing"
+
+	"github.com/etrace-io/sklearn/datasets"
+	modelselection "github.com/etrace-io/sklearn/model_selection"
+	"github.com/etrace-io/sklearn/pipeline"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 func ExampleGaussianNB() {

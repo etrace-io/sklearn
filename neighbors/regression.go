@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/metrics"
-
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/metrics"
 )
 
 // KNeighborsRegressor is a Regression based on k-nearest neighbors.

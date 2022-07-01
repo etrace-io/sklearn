@@ -6,13 +6,14 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
-	"github.com/pa-m/sklearn/metrics"
-	neuralnetwork "github.com/pa-m/sklearn/neural_network"
-	"github.com/pa-m/sklearn/preprocessing"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/datasets"
+	"github.com/etrace-io/sklearn/metrics"
+	neuralnetwork "github.com/etrace-io/sklearn/neural_network"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 func TestGridSearchCV_PredicterClone(t *testing.T) {
@@ -39,6 +40,7 @@ func TestGridSearchCV_PredicterClone(t *testing.T) {
 		t.Errorf("\nexpected: %s\ngot     : %s", expected, actual)
 	}
 }
+
 func sortParamArray(paramArray []map[string]interface{}) {
 	tofloat := func(x interface{}) float64 {
 		switch xv := x.(type) {
@@ -65,6 +67,7 @@ func sortParamArray(paramArray []map[string]interface{}) {
 	sort.Slice(paramArray, less)
 
 }
+
 func ExampleParameterGrid() {
 	paramArray := ParameterGrid(map[string][]interface{}{"a": {1, 2, 3}, "b": {10, 11}})
 	sortParamArray(paramArray)

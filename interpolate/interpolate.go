@@ -8,12 +8,15 @@ import (
 
 type xy struct{ x, y []float64 }
 
-func (s *xy) Len() int           { return len(s.x) }
+func (s *xy) Len() int { return len(s.x) }
+
 func (s *xy) Less(i, j int) bool { return s.x[i] < s.x[j] }
+
 func (s *xy) Swap(i, j int) {
 	s.x[i], s.x[j] = s.x[j], s.x[i]
 	s.y[i], s.y[j] = s.y[j], s.y[i]
 }
+
 func (s *xy) XY(i int) (float64, float64) { return s.x[i], s.y[i] }
 
 func interpolate2points(x0, y0, x1, y1 float64) func(float64) float64 {
@@ -63,8 +66,10 @@ func Interp1d(x, y []float64) func(x float64) float64 {
 
 type xyz struct{ x, y, z []float64 }
 
-func (s *xyz) Len() int           { return len(s.x) }
+func (s *xyz) Len() int { return len(s.x) }
+
 func (s *xyz) Less(i, j int) bool { return s.x[i] < s.x[j] || (s.x[i] == s.x[j] && s.y[i] < s.y[j]) }
+
 func (s *xyz) Swap(i, j int) {
 	s.x[i], s.x[j] = s.x[j], s.x[i]
 	s.y[i], s.y[j] = s.y[j], s.y[i]

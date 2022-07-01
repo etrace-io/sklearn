@@ -10,15 +10,15 @@ import (
 	"time"
 
 	"golang.org/x/exp/rand"
-
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
-	"github.com/pa-m/sklearn/metrics"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/datasets"
+	"github.com/etrace-io/sklearn/metrics"
 )
 
 type Problem struct {
@@ -86,7 +86,7 @@ func ExampleLinearRegression() {
 	if canPlot {
 
 		// plot result
-		p, _ := plot.New()
+		p := plot.New()
 
 		xys := func(X, Y mat.Matrix) plotter.XYs {
 			var data plotter.XYs

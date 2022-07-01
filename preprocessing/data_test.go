@@ -8,11 +8,10 @@ import (
 	"testing"
 
 	"golang.org/x/exp/rand"
-
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 var _ = []Transformer{&MinMaxScaler{}, &StandardScaler{}, &RobustScaler{}, &PolynomialFeatures{}, &OneHotEncoder{}, &Shuffler{}, &Binarizer{}, &MaxAbsScaler{}, &Normalizer{}, &KernelCenterer{}, &QuantileTransformer{}}
@@ -36,6 +35,7 @@ func ExampleMinMaxScaler() {
 	// [1.5    0]
 
 }
+
 func ExampleStandardScaler() {
 	// adapted from example in http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler
 	data := mat.NewDense(4, 2, []float64{0, 0, 0, 0, 1, 1, 1, 1})
@@ -443,6 +443,7 @@ func TestYeoJohsonTransform(t *testing.T) {
 		t.Errorf("yeoJohnsonOptimize failed")
 	}
 }
+
 func ExamplePowerTransformer() {
 	pt := NewPowerTransformer()
 	data := mat.NewDense(3, 2, []float64{

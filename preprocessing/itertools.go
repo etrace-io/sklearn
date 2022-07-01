@@ -15,6 +15,7 @@ func yieldPoolIndices(ch chan<- []int, pool, indices []int) {
 	}
 	ch <- a
 }
+
 func combinations(pool []int, r int) chan []int {
 	n := len(pool)
 	ch := make(chan []int)

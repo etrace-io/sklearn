@@ -1,12 +1,11 @@
 package metrics
 
 import (
-	//	"fmt"
 	"math"
 
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 type float = float64

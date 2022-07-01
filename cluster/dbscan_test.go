@@ -9,13 +9,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pa-m/sklearn/datasets"
-	"github.com/pa-m/sklearn/preprocessing"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
 	"gonum.org/v1/plot/vg/draw"
+
+	"github.com/etrace-io/sklearn/datasets"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 var visualDebug = flag.Bool("visual", false, "output images for benchmarks and test data")
@@ -40,6 +41,7 @@ func TestDBSCAN_Predict(t *testing.T) {
 		t.Fail()
 	}
 }
+
 func ExampleDBSCAN() {
 	// adapted from http://scikit-learn.org/stable/_downloads/plot_dbscan.ipynb
 	// Generate sample data
@@ -68,10 +70,7 @@ func ExampleDBSCAN() {
 	if *visualDebug {
 
 		// plot result
-		p, err := plot.New()
-		if err != nil {
-			panic(err)
-		}
+		p := plot.New()
 		p.Title.Text = fmt.Sprintf("Estimated number of clusters: %d", nclusters)
 		for cl := range labelsmap {
 			var data plotter.XYs
@@ -108,7 +107,7 @@ func ExampleDBSCAN() {
 			panic(err)
 		}
 		cmd := exec.Command("display", pngfile)
-		err = cmd.Start()
+		err := cmd.Start()
 		if err != nil {
 			fmt.Println(err.Error())
 		}

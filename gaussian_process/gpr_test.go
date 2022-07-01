@@ -1,12 +1,14 @@
 package gaussianprocess
 
 import (
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/gaussian_process/kernels"
-	"gonum.org/v1/gonum/floats"
-	"gonum.org/v1/gonum/mat"
 	"math"
 	"testing"
+
+	"gonum.org/v1/gonum/floats"
+	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/gaussian_process/kernels"
 )
 
 var _ base.Predicter = &Regressor{}

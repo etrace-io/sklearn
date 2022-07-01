@@ -22,6 +22,7 @@ func TestMatConst(t *testing.T) {
 		t.Fail()
 	}
 }
+
 func TestMatTranspose(t *testing.T) {
 	d := mat.NewDense(2, 2, []float64{0, 1, 0, 0})
 	m := MatTranspose{Matrix: d}

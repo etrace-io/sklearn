@@ -1,14 +1,12 @@
 package datasets
 
 import (
-
-	//"fmt"
 	"fmt"
 	"testing"
 
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 func TestLoadIris(t *testing.T) {

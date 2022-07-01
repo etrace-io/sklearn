@@ -1,12 +1,12 @@
 package modelselection
 
 import (
-	// "fmt"
 	"runtime"
 	"time"
 
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // CrossValidateResult is the struct result of CrossValidate. it includes TestScore,FitTime,ScoreTime,Estimator

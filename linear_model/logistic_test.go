@@ -10,8 +10,6 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
 	"gonum.org/v1/gonum/diff/fd"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
@@ -19,9 +17,13 @@ import (
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
 	"gonum.org/v1/plot/vg/draw"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/datasets"
 )
 
 var _ base.Predicter = &LogisticRegression{}
+
 var visualDebug = flag.Bool("visual", false, "output images for benchmarks and test data")
 
 func ExampleLogisticRegression() {
@@ -99,7 +101,7 @@ func ExampleLogisticRegression() {
 		Xgrid := npc(xx, yy)
 		Z := regr.Predict(Xgrid, nil)
 
-		plt, _ := plot.New()
+		plt := plot.New()
 		xys := func(X, Y mat.Matrix, cls int) (xy plotter.XYs) {
 			imax, _ := Y.Dims()
 			for i := 0; i < imax; i++ {

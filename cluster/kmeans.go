@@ -5,9 +5,9 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // KMeans grouping algo

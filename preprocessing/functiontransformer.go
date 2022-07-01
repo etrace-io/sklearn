@@ -1,8 +1,9 @@
 package preprocessing
 
 import (
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // FunctionTransformer Constructs a transformer from an arbitrary callable.

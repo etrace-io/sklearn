@@ -3,20 +3,17 @@ package linearmodel
 import (
 	"errors"
 	"fmt"
-	"time"
-
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/metrics"
-	"github.com/pa-m/sklearn/preprocessing"
-
-	//"gonum.org/v1/gonum/diff/fd"
 	"math"
 	"runtime"
+	"time"
 
 	"golang.org/x/exp/rand"
-
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/metrics"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 type float = float64

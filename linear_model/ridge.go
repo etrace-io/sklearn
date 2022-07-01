@@ -1,6 +1,6 @@
 package linearmodel
 
-import "github.com/pa-m/sklearn/base"
+import "github.com/etrace-io/sklearn/base"
 
 // Ridge is an alias for RegularizedRegression
 type Ridge = RegularizedRegression

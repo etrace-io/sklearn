@@ -5,8 +5,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // CDResult is the coordinate descent specific part in the regression result

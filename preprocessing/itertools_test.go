@@ -28,6 +28,7 @@ func Test_combinations(t *testing.T) {
 		}
 	}
 }
+
 func Test_combinations_wr(t *testing.T) {
 	fixtures := []struct {
 		pool     []int

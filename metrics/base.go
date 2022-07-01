@@ -4,9 +4,8 @@ import (
 	"fmt"
 
 	"gonum.org/v1/gonum/floats"
-	"gonum.org/v1/gonum/stat"
-
 	"gonum.org/v1/gonum/mat"
+	"gonum.org/v1/gonum/stat"
 )
 
 func averageBinaryScore(binaryMetric func(Ytrue, Yscore *mat.Dense, sampleWeight []float64) float64,

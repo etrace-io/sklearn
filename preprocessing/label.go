@@ -4,9 +4,10 @@ import (
 	"math"
 	"sort"
 
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // LabelBinarizer Binarize labels in a one-vs-all fashion

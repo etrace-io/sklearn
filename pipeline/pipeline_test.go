@@ -3,13 +3,13 @@ package pipeline
 import (
 	"fmt"
 
-	"github.com/pa-m/sklearn/base"
-
-	"github.com/pa-m/sklearn/datasets"
-	nn "github.com/pa-m/sklearn/neural_network"
-	"github.com/pa-m/sklearn/preprocessing"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/datasets"
+	nn "github.com/etrace-io/sklearn/neural_network"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 func ExamplePipeline() {

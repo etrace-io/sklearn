@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // NearestNeighbors is the unsupervised alog implementing search of k nearest neighbors

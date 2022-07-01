@@ -60,9 +60,9 @@ If it is large, such as suggesting a new repository, sub-repository, or interfac
 
 ### Your First Code Contribution
 
-If you are a new contributor, thank you!  Before your first merge, you will need to be added to the [CONTRIBUTORS](https://github.com/pa-m/sklearn/blob/master/CONTRIBUTORS) and [AUTHORS](https://github.com/pa-m/sklearn/blob/master/AUTHORS) file.
+If you are a new contributor, thank you!  Before your first merge, you will need to be added to the [CONTRIBUTORS](https://github.com/etrace-io/sklearn/blob/master/CONTRIBUTORS) and [AUTHORS](https://github.com/etrace-io/sklearn/blob/master/AUTHORS) file.
 Open a pull request adding yourself to them.
-All sklearn code follows the MIT license in the [license document](https://github.com/pa-m/sklearn/blob/master/LICENSE).
+All sklearn code follows the MIT license in the [license document](https://github.com/etrace-io/sklearn/blob/master/LICENSE).
 We prefer that code contributions do not come with additional licensing.
 For exceptions, added code must also follow a MIT license.
 
@@ -95,7 +95,7 @@ Also note that you do not have to be the pull request submitter to request addit
 ### What Can I Do to Help?
 
 If you are looking for some way to help the sklearn project, there are good places to start, depending on what you are comfortable with.
-You can [search](https://github.com/pa-m/sklearn/issues) for open issues in need of resolution.
+You can [search](https://github.com/etrace-io/sklearn/issues) for open issues in need of resolution.
 You can improve documentation, or improve examples.
 You can add and improve tests.
 You can improve performance, either by improving accuracy, speed, or both.

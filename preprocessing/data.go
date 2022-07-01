@@ -6,13 +6,12 @@ import (
 	"sort"
 
 	"golang.org/x/exp/rand"
-
-	"github.com/pa-m/sklearn/base"
-
-	"github.com/pa-m/optimize"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/optimize"
 )
 
 type float = float64
@@ -1496,6 +1495,7 @@ func boxCoxOptimize(x []float64) float64 {
 	_, _, _ = fx, iter, funcalls
 	return res
 }
+
 func boxCoxTransform(out, x []float64, lmbda float64) {
 	var f = func(x float64) float64 { return (math.Pow(x, lmbda) - 1) / lmbda }
 	if lmbda == 0 {
@@ -1509,6 +1509,7 @@ func boxCoxTransform(out, x []float64, lmbda float64) {
 		}
 	}
 }
+
 func boxCoxInverseTransform(out, x []float64, lmbda float64) {
 	var f = func(x float64) float64 { return math.Pow(x*lmbda+1, 1/lmbda) }
 	if lmbda == 0 {

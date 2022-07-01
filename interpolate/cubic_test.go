@@ -4,11 +4,9 @@ import (
 	"flag"
 	"os"
 	"os/exec"
-
-	"golang.org/x/exp/rand"
-
 	"testing"
 
+	"golang.org/x/exp/rand"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
@@ -46,8 +44,7 @@ func ExampleCubicSpline() {
 		y2[i] = f(x2[i])
 	}
 
-	p, err := plot.New()
-	check(err)
+	p := plot.New()
 	scatter, err := plotter.NewScatter(&xy{xs, ys})
 	line, err := plotter.NewLine(&xy{x2, y2})
 	p.Add(scatter, line)

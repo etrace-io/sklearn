@@ -6,9 +6,10 @@ import (
 	"runtime"
 	"sort"
 
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // Rectangle Hyperrectangle class.    Represents a Cartesian product of intervals.

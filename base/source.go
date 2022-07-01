@@ -3,8 +3,9 @@ package base
 import (
 	"sync"
 
-	"github.com/pa-m/randomkit"
 	"golang.org/x/exp/rand"
+
+	"github.com/etrace-io/sklearn/randomkit"
 )
 
 // A Source represents a source of uniformly-distributed

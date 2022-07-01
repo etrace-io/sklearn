@@ -7,20 +7,16 @@ import (
 	"sync"
 	"time"
 
-	"gonum.org/v1/gonum/floats"
-
-	"github.com/pa-m/sklearn/metrics"
-
-	"github.com/pa-m/sklearn/preprocessing"
-
-	"github.com/pa-m/sklearn/base"
-	"gonum.org/v1/gonum/mat"
-
-	"gonum.org/v1/gonum/blas/blas64"
-
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/blas"
+	"gonum.org/v1/gonum/blas/blas64"
+	"gonum.org/v1/gonum/floats"
+	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/metrics"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 // LogisticRegression Logistic Regression (aka logit, MaxEnt) classifier.

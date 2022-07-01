@@ -53,7 +53,9 @@ type Slicer interface {
 }
 
 type blas32General = blas32.General
+
 type blas64General = blas64.General
+
 type blasXXGeneral = blas32General
 
 // General32 is like blas32.General
@@ -76,15 +78,18 @@ type General64 struct {
 
 // GeneralXX is for easy tranposition to float32 or float64
 type GeneralXX = General32
+
 type transposed struct{ Matrix }
 
 func (mat transposed) Dims() (r, c int) {
 	c, r = mat.Matrix.Dims()
 	return
 }
+
 func (mat transposed) At(i, j int) float64 {
 	return mat.Matrix.At(j, i)
 }
+
 func (mat transposed) T() Matrix {
 	return mat.Matrix
 }
@@ -201,6 +206,7 @@ func (g general32FastSwapT) Swap(i, j int) {
 	copy(g.Data[ipos:ipos+g.Cols], g.Data[jpos:jpos+g.Cols])
 	copy(g.Data[jpos:jpos+g.Cols], g.tmp)
 }
+
 func general32FastSwap(g blas32.General) general32FastSwapT {
 	return general32FastSwapT{General32(g), make([]float32, g.Cols)}
 }
@@ -221,6 +227,7 @@ func (g general64FastSwapT) Swap(i, j int) {
 	copy(g.Data[ipos:ipos+g.Cols], g.Data[jpos:jpos+g.Cols])
 	copy(g.Data[jpos:jpos+g.Cols], g.tmp)
 }
+
 func general64FastSwap(g blas64.General) general64FastSwapT {
 	return general64FastSwapT{General64(g), make([]float64, g.Cols)}
 }

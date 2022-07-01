@@ -5,10 +5,11 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/pa-m/sklearn/base"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // ParameterGrid ...

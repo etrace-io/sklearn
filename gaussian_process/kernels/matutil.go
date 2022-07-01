@@ -2,10 +2,11 @@ package kernels
 
 import (
 	"fmt"
-	"gonum.org/v1/gonum/mat"
-	//"gorgonia.org/tensor"
-	"github.com/pa-m/sklearn/gaussian_process/tensor"
 	"math"
+
+	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/gaussian_process/tensor"
 )
 
 // NewMatFromFunc ...
@@ -18,6 +19,7 @@ type matFromFunc struct {
 	at   func(i, j int) float64
 	set  func(i, j int, v float64)
 }
+
 type transposed struct {
 	mat.Matrix
 }
@@ -26,6 +28,7 @@ func (m transposed) Dims() (r, c int) {
 	c, r = m.Matrix.Dims()
 	return
 }
+
 func (m transposed) At(i, j int) float64 {
 	return m.Matrix.At(j, i)
 }
@@ -37,9 +40,11 @@ func (m transposed) T() mat.Matrix {
 func (m matFromFunc) Dims() (r, c int) {
 	return m.r, m.c
 }
+
 func (m matFromFunc) At(i, j int) float64 {
 	return m.at(i, j)
 }
+
 func (m matFromFunc) Set(i, j int, v float64) {
 	m.set(i, j, v)
 }

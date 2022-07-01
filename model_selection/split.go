@@ -3,9 +3,10 @@ package modelselection
 import (
 	"math"
 
-	"github.com/pa-m/sklearn/base"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // RandomState is to init a new random source for reproducibility

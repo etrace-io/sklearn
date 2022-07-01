@@ -3,9 +3,9 @@ package neighbors
 import (
 	"fmt"
 	"math"
+	"testing"
 
 	"gonum.org/v1/gonum/mat"
-	"testing"
 )
 
 func TestRectangle(t *testing.T) {

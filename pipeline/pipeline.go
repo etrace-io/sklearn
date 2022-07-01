@@ -2,14 +2,12 @@ package pipeline
 
 import (
 	"fmt"
-
-	// "log"
 	"strings"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/preprocessing"
-
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 // NamedStep represents a pipeline named Step

@@ -1,11 +1,12 @@
 package base
 
 import (
+	"fmt"
+	"testing"
+
 	"golang.org/x/exp/rand"
 
-	"fmt"
-	"github.com/pa-m/randomkit"
-	"testing"
+	"github.com/etrace-io/sklearn/randomkit"
 )
 
 var (

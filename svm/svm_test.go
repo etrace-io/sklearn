@@ -8,14 +8,15 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/pa-m/sklearn/metrics"
-	"github.com/pa-m/sklearn/preprocessing"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
 	"gonum.org/v1/plot/vg/draw"
 	"gonum.org/v1/plot/vg/vgimg"
+
+	"github.com/etrace-io/sklearn/metrics"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 var visualDebug = flag.Bool("visual", false, "output images for benchmarks and test data")
@@ -83,7 +84,7 @@ func ExampleSVC() {
 			Xgrid := npc(xx, yy)
 			Z := &mat.Dense{}
 			clf.Predict(Xgrid, Z)
-			plt, _ := plot.New()
+			plt := plot.New()
 			xys := func(X, Y mat.Matrix, cls int) (xy plotter.XYs) {
 				imax, _ := Y.Dims()
 				for i := 0; i < imax; i++ {

@@ -1,10 +1,10 @@
 package preprocessing
 
 import (
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/floats"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // PCA is a thin single value decomposition transformer

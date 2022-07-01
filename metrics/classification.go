@@ -3,9 +3,10 @@ package metrics
 import (
 	"fmt"
 
-	"github.com/pa-m/sklearn/preprocessing"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"
+
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 // AccuracyScore reports (weighted) true values/nSamples
@@ -151,6 +152,7 @@ func ConfusionMatrix(YTrue, YPred *mat.Dense, sampleWeight []float64) *mat.Dense
 	cm, _, _, _ := internalConfusionMatrix(YTrue, YPred, sampleWeight)
 	return cm
 }
+
 func internalConfusionMatrix(YTrue, YPred *mat.Dense, sampleWeight []float64) (*mat.Dense, *mat.Dense, *mat.Dense, *preprocessing.LabelEncoder) {
 	le := preprocessing.NewLabelEncoder()
 	le.Fit(nil, YTrue)

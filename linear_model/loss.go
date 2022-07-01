@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // Hinge loss , for SVMs, h=-1 +1. v https://en.wikipedia.org/wiki/Hinge_loss

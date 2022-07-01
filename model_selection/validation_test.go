@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/datasets"
-	linearModel "github.com/pa-m/sklearn/linear_model"
-	"github.com/pa-m/sklearn/metrics"
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/datasets"
+	linearModel "github.com/etrace-io/sklearn/linear_model"
+	"github.com/etrace-io/sklearn/metrics"
 )
 
 func ExampleCrossValidate() {

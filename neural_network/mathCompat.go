@@ -3,10 +3,9 @@ package neuralnetwork
 import (
 	m64 "math"
 
+	m32 "github.com/chewxy/math32"
 	"gonum.org/v1/gonum/blas/blas32"
 	"gonum.org/v1/gonum/blas/blas64"
-
-	m32 "github.com/chewxy/math32"
 )
 
 type floatXX = float32
@@ -53,17 +52,21 @@ var M64 = struct {
 var MXX = M32
 
 type blas32Vector = blas32.Vector
+
 type blas64Vector = blas64.Vector
+
 type blasXXVector = blas32.Vector
 
 func dot32(n, xinc, yinc int, x, y []float32) float32 {
 	return blas32.Dot(blas32.Vector{N: n, Inc: xinc, Data: x}, blas32.Vector{Inc: yinc, Data: y})
 }
+
 func dot64(n, xinc, yinc int, x, y []float64) float64 {
 	return blas64.Dot(blas64.Vector{N: n, Inc: xinc, Data: x}, blas64.Vector{N: n, Inc: yinc, Data: y})
 }
 
 var gemm32 = blas32.Gemm
+
 var gemm64 = blas64.Gemm
 
 // axpy32 adds x scaled by alpha to y:
@@ -102,4 +105,5 @@ func MaxIdx64(a []float64) int {
 
 // MaxIdxXX ...
 var MaxIdxXX = MaxIdx32
+
 var toLogitsXX = toLogits32

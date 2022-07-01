@@ -1,9 +1,9 @@
 package neuralnetwork
 
 import (
-	"github.com/pa-m/sklearn/base"
-
 	"gonum.org/v1/gonum/mat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // MLPRegressor ...

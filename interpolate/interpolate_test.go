@@ -2,9 +2,10 @@ package interpolate
 
 import (
 	"fmt"
-	"golang.org/x/exp/rand"
 	"sort"
 	"testing"
+
+	"golang.org/x/exp/rand"
 )
 
 func ExampleInterp1d() {

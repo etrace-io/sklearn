@@ -11,14 +11,13 @@ import (
 	"sync"
 	"time"
 
-	"gonum.org/v1/gonum/blas/blas32"
-
-	"github.com/pa-m/sklearn/base"
-
 	"golang.org/x/exp/rand"
 	"gonum.org/v1/gonum/blas"
+	"gonum.org/v1/gonum/blas/blas32"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // BaseMultilayerPerceptron32 closely matches sklearn/neural_network/multilayer_perceptron.py
@@ -1004,6 +1003,7 @@ func (opt *SGDOptimizer32) iterationEnds(timeStep float32) {
 	}
 
 }
+
 func (opt *SGDOptimizer32) triggerStopping(msg string, verbose bool) bool {
 	if !strings.EqualFold(opt.LRSchedule, "adaptive") {
 		if verbose {
@@ -1023,6 +1023,7 @@ func (opt *SGDOptimizer32) triggerStopping(msg string, verbose bool) bool {
 	}
 	return false
 }
+
 func (opt *SGDOptimizer32) updateParams(grads []float32) {
 	if opt.velocities == nil {
 		opt.velocities = make([]float32, len(grads))
@@ -1051,8 +1052,10 @@ type AdamOptimizer32 struct {
 	beta1t, beta2t        float32
 }
 
-func (opt *AdamOptimizer32) iterationEnds(timeStep float32)                {}
+func (opt *AdamOptimizer32) iterationEnds(timeStep float32) {}
+
 func (opt *AdamOptimizer32) triggerStopping(msg string, verbose bool) bool { return true }
+
 func (opt *AdamOptimizer32) updateParams(grads []float32) {
 	if opt.t == 0 {
 		opt.ms = make([]float32, len(grads))
@@ -1297,9 +1300,11 @@ func (m *LabelBinarizer32) Fit(Xmatrix, Ymatrix mat.Matrix) base.Fiter {
 // Float32Slice implements sort.Interface.
 type Float32Slice []float32
 
-func (p Float32Slice) Len() int           { return len(p) }
+func (p Float32Slice) Len() int { return len(p) }
+
 func (p Float32Slice) Less(i, j int) bool { return p[i] < p[j] || M32.IsNaN(p[i]) && !M32.IsNaN(p[j]) }
-func (p Float32Slice) Swap(i, j int)      { p[i], p[j] = p[j], p[i] }
+
+func (p Float32Slice) Swap(i, j int) { p[i], p[j] = p[j], p[i] }
 
 // Transform for LabelBinarizer32
 func (m *LabelBinarizer32) Transform(X, Y mat.Matrix) (Xout, Yout General32) {

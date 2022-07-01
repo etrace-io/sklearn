@@ -4,9 +4,10 @@ import (
 	"math"
 	"sort"
 
-	"github.com/pa-m/sklearn/base"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/stat"
+
+	"github.com/etrace-io/sklearn/base"
 )
 
 // Imputer ...

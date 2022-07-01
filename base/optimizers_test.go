@@ -28,11 +28,13 @@ func assertNil(t testing.TB, x interface{}) {
 		t.FailNow()
 	}
 }
+
 func assertNotNil(t testing.TB, x interface{}) {
 	if x == nil {
 		t.FailNow()
 	}
 }
+
 func assertEqual(t testing.TB, a, b interface{}) {
 	if !reflect.DeepEqual(a, b) {
 		t.FailNow()
@@ -98,7 +100,7 @@ func TestColNorm(t *testing.T) {
 // 	//"golang.org/x/exp/rand"
 // 	"testing"
 
-// 	//lm "github.com/pa-m/sklearn/linear_model"
+// 	//lm "github.com/etrace-io/sklearn/linear_model"
 // 	"gonum.org/v1/gonum/mat"
 // 	"gonum.org/v1/gonum/optimize"
 // 	//"time"

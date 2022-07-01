@@ -10,14 +10,14 @@ import (
 	"time"
 
 	"golang.org/x/exp/rand"
-
-	"github.com/pa-m/sklearn/base"
-	"github.com/pa-m/sklearn/preprocessing"
 	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/plot"
 	"gonum.org/v1/plot/plotter"
 	"gonum.org/v1/plot/vg"
 	"gonum.org/v1/plot/vg/draw"
+
+	"github.com/etrace-io/sklearn/base"
+	"github.com/etrace-io/sklearn/preprocessing"
 )
 
 func ExampleSVR() {
@@ -40,7 +40,7 @@ func ExampleSVR() {
 		for sample := 0; sample < mY.Rows; sample++ {
 			mY.Data[sample] = math.Sin(mX.Data[sample])
 			if sample%5 == 0 {
-				mY.Data[sample] += (0.5 - rnd.Float64())
+				mY.Data[sample] += 0.5 - rnd.Float64()
 			}
 		}
 	}
@@ -85,7 +85,7 @@ func ExampleSVR() {
 		pngfile := fmt.Sprintf("/tmp/ExampleSVR.png")
 		os.Remove(pngfile)
 
-		p, _ := plot.New()
+		p := plot.New()
 		p.Title.Text = "Support vector regression"
 		p.X.Label.Text = "data"
 		p.Y.Label.Text = "target"
